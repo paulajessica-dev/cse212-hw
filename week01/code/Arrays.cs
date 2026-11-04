@@ -13,7 +13,15 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        var multiples = new double[length]; // create an array of doubles with the specified length
+
+        for (var i = 0; i < length; ++i) 
+        {
+            multiples[i] = number * (i + 1);// calculate the multiple of the number and assign it to the array
+        }
+
+
+        return multiples; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +37,9 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        var rotated = data.GetRange(data.Count - amount, amount); // create a new list that contains the last 'amount' elements of the original list
+        rotated.AddRange(data.GetRange(0, data.Count - amount)); // add the remaining elements of the original list to the new list
+        data.Clear(); // clear the original list
+        data.AddRange(rotated); // add the elements of the new list to the original list
     }
 }
